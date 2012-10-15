@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EMC Greenplum / VMware Project Serengeti</title>
+    
+    <style type="text/css">
+    <!--
+    body {
+      color:#000000;
+      background-color:#C0C0C0;
+    }
+    a  { color:#0000FF; }
+    a:visited { color:#800080; }
+    a:hover { color:#008000; }
+    a:active { color:#FF0000; }
+    -->
+    </style>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+<form action="/file-out" method="post">
+<input type="hidden" name="role" value="core" />
+
+<table border="1"  width="100%" cellpadding="10">
+	<tr><!-- Row 1 -->
+	    <td><center><h2>Project Serengeti Cluster Management</h2></center></td><!-- Col 1 -->
+	</tr>
+  	<tr><!-- Clusters Row -->
+     	<td>
+		     <center>
+		     <table border="1" >
+			 <caption><h3>Clusters</h3></caption>
+			     <tr>
+				     <th>Name</th>
+				     <th>Status</th>
+				     <th>Distro</th>
+			     </tr>
+				 %for row in rows:
+					<td><a href="http://localhost:8010/clusters/{{row['name']}}" target="_self">{{row['name']}}</a></td>
+					<td>{{row['status']}}</td>
+					<td>{{row['distro']}}</td>
+				 %end
+			</table>
+			</center>
+		</td>
+ 	</tr>
+	
+ 
+</table>
+
+
+</form>
+  </body>
+</html
